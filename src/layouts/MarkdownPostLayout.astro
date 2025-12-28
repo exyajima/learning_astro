@@ -1,0 +1,21 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+
+  <html lang="ja">
+    <head>
+      <meta charset="utf-8" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta name="viewport" content="width=device-width" />
+      <meta name="generator" content={Astro.generator} />
+    </head>
+    <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+    <p><em>{frontmatter.description}</em></p>
+    <p>著者: {frontmatter.author}</p>
+    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <slot />
+  </html>
+</BaseLayout>
