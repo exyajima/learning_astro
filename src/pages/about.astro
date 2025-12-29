@@ -20,7 +20,7 @@ const skills = [
 ];
 
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 
 const skillColor = "navy";
@@ -55,9 +55,7 @@ const textCase = "uppercase";
   <ul>
     <li>私の名前は{identity.firstName}です。</li>
     <li>
-      {identity.country}に住んでおり、{
-        identity.occupation
-      }として働いています。
+      {identity.country}に住んでおり、{identity.occupation}として働いています。
     </li>
     {
       identity.hobbies.length >= 2 && (
